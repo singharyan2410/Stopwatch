@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stopwatch</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+    />
+  </head>
+  <body class="bg-white flex justify-center items-center h-screen">
+    <div
+      class="bg-white border-white rounded-lg p-16 flex flex-col items-center bg-gradient-to-r from-green-400 to-blue-800 ..."
+    >
+      <div
+        class="bg-gradient-to-r from-green-400 to-blue-800 rounded-full h-60 w-60 p-2 flex items-center justify-center shadow-2xl"
+      >
+        <span id="time" class="text-4xl text-white font-semibold"
+          >00:00:00</span
+        >
+      </div>
+      <div class="flex gap-4 mt-8">
+        <button
+          id="start"
+          class="font-bold text-white hover:scale-120 border-2 flex items-center justify-center py-2 px-4 rounded-lg shadow-2xl"
+        >
+          Start
+        </button>
+        <button
+          id="stop"
+          class="font-bold text-white hover:scale-120 border-2 flex items-center justify-center py-2 px-4 rounded-lg shadow-2xl"
+        >
+          Stop
+        </button>
+        <button
+          id="reset"
+          class="font-bold text-white hover:scale-120 border-2 flex items-center justify-center py-2 px-4 rounded-lg shadow-2xl"
+        >
+          Reset
+        </button>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
