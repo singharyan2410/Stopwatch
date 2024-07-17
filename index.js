@@ -19,12 +19,22 @@ function updateTime() {
 }
 
 startButton.addEventListener("click", () => {
+    stopButton.disabled = true;
+    resetButton.disabled = true;
   if (!intervalId) {
+    // Start the timer for the first time
     startTime = Date.now() - elapsedTime;
     intervalId = setInterval(updateTime, 10);
-    stopButton.disabled = false;
-    resetButton.disabled = true;
+    // startButton.style.display = "none"; // Hide start button on start
+    startButton.innerText = "Resume";
+    stopButton.style.display = "inline-block"; // Show stop button
+    resetButton.style.display = "inline-block"; // Show reset button
+  } else {
+    // Resume the timer if already started (no change to button text)
+    intervalId = setInterval(updateTime, 10);
   }
+  stopButton.disabled = false;
+  resetButton.disabled = false;
 });
 
 stopButton.addEventListener("click", () => {
@@ -40,6 +50,10 @@ resetButton.addEventListener("click", () => {
   startTime = 0;
   elapsedTime = 0;
   timeDisplay.innerText = "00:00:00";
-  stopButton.disabled = true;
-  resetButton.disabled = true;
+  startButton.innerText = "Start";
+  // startButton.style.display = "inline-block"; // Show start button on reset
+  stopButton.style.display = "none"; // Hide stop button
+  resetButton.style.display = "none"; // Hide reset button
+  stopButton.disabled = true; // Disable stop button after reset
+  resetButton.disabled = true; // Disable reset button after reset
 });
